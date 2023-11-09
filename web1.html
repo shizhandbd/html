@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- css规则 = 选择器 + 声明块
+        书写位置：
+                1、内部样式表-书写在style元素中 一般在head中
+                2、内联样式表-书写在元素的style属性中
+                3、外部样式表-将样式书写在独立的css文件中
+                   需要在head中添加一个link元素
+        选择器：选中元素
+               1、元素选择器
+               2、id选择器
+               3、类选择器
+
+        声明块：出现在{}中
+               包含了很多声明（属性）
+               每一个声明（属性）表达了某一方面的样式
+               格式为 “属性名：属性值；”
+    -->
+    <style>
+        h1 {
+            color: yellow;
+            background-color: lightblue;
+            text-align: left;
+        }
+
+        p {
+            color: blue;
+        }
+
+        #test {
+            color: aqua;
+        }
+
+        .red {
+            color: red;
+        }
+
+        .big-center {
+            font-size: 3em;
+            text-align: center;
+        }
+    </style>
+
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+    <h1 class="red big-center">开始添加样式</h1>
+    <h2 style="color: chocolate; text-align: right;">第二个样式</h2>
+    <p id="test">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut, sunt.</p>
+    <p class="red">Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+
+    <div class="red-big-left">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro cumque corrupti iusto, dolores omnis nostrum obcaecati ipsam animi debitis deleniti!
+    </div>
+</body>
+
+</html>

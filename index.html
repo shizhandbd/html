@@ -6,10 +6,10 @@
          写法1: <meta charset="UTF-8">
          写法2: <meta charset="UTF-8" />
 
-    -->
+     -->
      <!-- meta 文档的元数据 
          charset:指定网页编码
-    -->
+     -->
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <meta http-equiv="X-UA-Compatible">
@@ -24,10 +24,15 @@
          元素展示到页面中的效果应该由css决定
          浏览器带有默认css样式
          选择什么元素，取决于内容的含义，而不是显示的效果
-    -->
+
+         1、容器元素中可以包含任何元素
+         2、a元素中几乎可以包含任何元素
+         3、部分元素由固定的子元素
+         4、标题元素和段落元素不能互相嵌套，并且也不能包含容器元素
+     -->
      <!-- h元素
          h1~h6
-    -->
+     -->
      <h1>1级标题</h1>
      <h2>2级标题</h2>
      <h3>3级标题</h3>
@@ -37,7 +42,7 @@
 
      <!-- p元素
          段落
-    -->
+     -->
      <p>this is a paragraph</p>
      <p>this is a paragraph</p>
      <p>this is a paragraph</p>
@@ -53,8 +58,10 @@
      <!-- span元素
          无语义
          部分元素在显示是会独占一行（块级元素），也有元素不会去占用（行级元素）
+         块级元素可以包含行级元素，反之不行，a元素除外
          html5已经已经弃用该说法
-    -->
+         元素的包含关系由元素的内容类别决定
+     -->
      <p>三原色包含： <span style="color: red;">红</span>、<span style="color: green;">绿</span>、<span style="color: blue
     ;">蓝</span></p>
 
@@ -64,7 +71,7 @@
          在pre元素中的内容不会出现空白折叠，按源代码格式显示
          通常用于在网页中显示代码
          pre元素的功能本质是它有一个默认的css格式
-    -->
+     -->
      <p>Lorem
           ipsum, dolor sit amet consectetur
           adipisicing elit. Maxime, unde quaerat culpa delen
@@ -227,14 +234,10 @@
           src：资源的路径
           alt：当图片的资源失效，将使用该属性替代
      -->
-<<<<<<< HEAD
      <a target="_blank" href="https://www.bilibili.com/bangumi/play/ss46356?spm_id_from=333.1007.0.0"><img
                usemap="#reLife"
                src="https://i0.hdslb.com/bfs/banner/b5d064aa3cea2236e2a21f7e646ef596452e62fe.png@976w_550h_1c_!web-home-carousel-cover.avif"
                alt="this is a picture"></a>
-=======
-     <a target="_blank" href="https://www.bilibili.com/bangumi/play/ss46356?spm_id_from=333.1007.0.0"><img usemap="#reLife" src="https://i0.hdslb.com/bfs/banner/b5d064aa3cea2236e2a21f7e646ef596452e62fe.png@976w_550h_1c_!web-home-carousel-cover.avif" alt="this is a picture"></a>
->>>>>>> a130b42eb8583e9d48100cbb121ea332e7523262
 
      <!-- map元素
           name属性
@@ -247,7 +250,6 @@
           alt：当图片的资源失效，将使用该属性替代
           target：窗口的位置
      -->
-<<<<<<< HEAD
 
      <figure>
           <map name="reLife">
@@ -277,7 +279,7 @@
           1、旧版本的浏览器不支持这两个元素
           2、不用浏览器支持的音视频格式可能不一致
      -->
-     <video controls src="../电话盒子/电话盒子沸思.mp4" ></video>
+     <video controls src="../电话盒子/电话盒子沸思.mp4"></video>
      <audio controls src="image/a0b47e997d19421a81d0636436576637_rx.wav"></audio>
 
      <video controls loop autoplay>
@@ -285,12 +287,77 @@
           <source src="../电话盒子/电话盒子易拓宝.mp4">
      </video>
 
+     <!-- 列表元素
+          有序列表：<ol>；<li>
+                  type属性：i、用罗马数字排序；a、用字母来排序；A、用大写字母排列；1、用数字排序
+                  reversed：倒序显示，布尔属性
+          无序列表：<ul>
+                  常用与制作菜单或者新闻列表
+          定义列表：<dl>；<dt>;<dd>
+                  通常用于术语的定义
+     -->
+     <ol>
+          <li>
+               first step
+          </li>
+          <li>
+               second step
+          </li>
+          <li>
+               third step
+          </li>
+     </ol>
+     <ul>
+          <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, alias.</li>
+          <li>Lorem ipsum dolor sit amet.</li>
+          <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, dolorum! Ad laboriosam minus modi eum!
+          </li>
+          <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga aspernatur incidunt eligendi.</li>
+     </ul>
+
+     <dl>
+          <dt>HTML</dt>
+          <dd>超文本标记语言</dd>
+
+          <dt>元素</dt>
+          <dd>组成HTML的单元</dd>
+     </dl>
+
+     <!-- 容器元素
+          该元素代表愉快区域，内部用于放置其他元素
+          div
+          没有语义
+          语义化容器元素
+          header：通常用于表示页头
+          footer：通常用于表示页脚
+          article：用场用于表示正文
+          section：通常用于表示文章的章节
+          aside：通常用于侧边栏
+     -->
+     <header>
+
+     </header>
+
+     <article>
+          <header>
+               <h1></h1>
+               <div></div>
+          </header>
+          <section>
+               <h2>第一章</h2>
+               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque minus error qui illo, mollitia ex
+                    perspiciatis in officiis placeat dolor nulla beatae. Fugit, recusandae suscipit? Delectus, quis?
+                    Illo, nostrum minus.</p>
+          </section>
+     </article>
+
+     <aside>
+          侧边栏
+     </aside>
+
+     <footer>
+
+     </footer>
 </body>
-=======
-     <map name="reLife">
-          <area shape="circle" coords="340,170,150" href="https://www.bilibili.com/bangumi/play/ss5012?spm_id_from=333.337.0.0"  target="_blank">
-     </map>
-</body> 
->>>>>>> a130b42eb8583e9d48100cbb121ea332e7523262
 
 </html>

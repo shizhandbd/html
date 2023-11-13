@@ -12,6 +12,10 @@
                 2、内联样式表-书写在元素的style属性中
                 3、外部样式表-将样式书写在独立的css文件中
                    需要在head中添加一个link元素
+                   减少浏览器的响应时间
+                   有利于代码分离，利于维护
+                   解决页面样式重复的问题
+
         选择器：选中元素
                1、元素选择器
                2、id选择器
@@ -60,6 +64,77 @@
     <div class="red-big-left">
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro cumque corrupti iusto, dolores omnis nostrum obcaecati ipsam animi debitis deleniti!
     </div>
+
+    <!-- 
+        color
+        很少直接使用预制色，一般采用三原色
+        色值，color : rgb(255, 255, 255)
+             color : hex(#ffffff)
+        常用色：
+        淘宝红#ff4400
+        黑色#000000
+        白色#ffffff
+        灰色#cccccc      
+        
+        background-color
+        背景色
+
+        font-size
+        文字尺寸大小
+        常用单位
+        px像素：绝对单位
+        em：相对于父元素的大小 没有声明会使用父元素的字体大小；
+            如果没有父元素则使用基准字号
+        user agent stylesheet 用户代理样式（浏览器的默认样式）
+
+        font-weight
+        文字粗细 
+        取值用数字或者预设值
+        normal：400
+        bold：700
+
+        font-family
+        字体类型
+        必须是用户计算机中存在的字体，才能生效
+        使用多个字体以匹配不同环境
+        font-family: 字体A,字体B,字体C,字体D,sans-serif(非衬线字体)
+        依次匹配
+
+        font-style
+        字体样式
+        通常用来设置斜体
+        i元素默认样式为斜体 i元素通常用来展示icon
+
+        text-decoration
+        文本修饰
+        underline
+        line-though
+        s元素，表示过期的
+        del元素也能到达效果
+
+        text-indent
+        首行文本锁进
+        px缩进具体数值
+        em缩进具体字数（注意语言）
+
+        line-height
+        文本高度
+        设定文本之间的距离
+        行高可以设置纯数字，表示相对于当前字体大小的倍数值
+
+        weight，height
+
+        letter-spacing
+        文字间隙
+
+        text-align
+        元素内部文字的水平排列方式
+
+
+    -->
+    <h1>一级标题</h1>
+    <i>斜的</i>
+    <del>false</del>
 </body>
 
 </html>

@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <!-- css规则 = 选择器 + 声明块
+    <!-- 
+        css规则 = 选择器 + 声明块
         书写位置：
                 1、内部样式表-书写在style元素中 一般在head中
                 2、内联样式表-书写在元素的style属性中
@@ -27,6 +28,10 @@
                格式为 “属性名：属性值；”
     -->
     <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
         h1 {
             color: yellow;
             background-color: lightblue;
@@ -49,6 +54,32 @@
             font-size: 3em;
             text-align: center;
         }
+
+        a {
+            color: red;
+        }
+
+        div ul a {
+            color: green;
+        }
+
+        #mydiv #myul a {
+            color: gray;
+        }
+
+        #mydiv #myul .mylink {
+            color: #008c8c;
+        }
+
+        #mydiv #myul a:link {
+            color: chocolate;
+        }
+
+        #inherit {
+            color: red;
+            font-size: 2em;
+            line-height: 2.5;
+        }
     </style>
 
     <link rel="stylesheet" href="./css/index.css">
@@ -61,8 +92,9 @@
     <p class="red">Lorem ipsum dolor sit amet.</p>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
 
-    <div class="red-big-left">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro cumque corrupti iusto, dolores omnis nostrum obcaecati ipsam animi debitis deleniti!
+    <div class="div1" class="red-big-left">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro cumque corrupti iusto, dolores omnis nostrum
+        obcaecati ipsam animi debitis deleniti!
     </div>
 
     <!-- 
@@ -114,7 +146,7 @@
 
         text-indent
         首行文本锁进
-        px缩进具体数值
+        px缩进具体数值  
         em缩进具体字数（注意语言）
 
         line-height
@@ -135,6 +167,229 @@
     <h1>一级标题</h1>
     <i>斜的</i>
     <del>false</del>
+
+    <!-- 
+        选择器
+        ·通配符选择器
+            *，表示选择所有元素
+        ·属性选择器
+            根据属性名和属性值选中元素
+        ·伪类选择器
+            选中某些元素的某种状态
+            1、link：超链接未访问时的状态
+            2、visited：超链接访问过后的状态
+            3、hover：鼠标悬停
+            4、active：鼠标按下状态
+            四种状态按顺序写入
+        ·伪元素选择器
+            生成并选中某个元素内部的第一个子元素或最后一个子元素
+            ::before
+            ::after
+    
+    -->
+
+    <a class="a b c d" href="https://baidu.com/">baidu</a>
+    <a href="https://douyu.com/">douyu</a>
+    <a href="https://bilibili.com/" target="_blank">bilibili</a>
+
+    <p>Lorem ipsum, dolor sit <span>amet consectetur</span> adipisicing elit. Neque repudiandae alias illum aut ab quos
+        veniam facere, obcaecati nobis molestiae magnam veritatis sunt at facilis exercitationem distinctio laboriosam
+        quod repellendus.</p>
+
+
+    <!-- 
+        选择器的组合 
+        1、并且 多个选择器连续书写
+        2、后代元素 - 空格
+        3、子元素 - > 选中子元素 子元素的子元素不受影响
+        4、相邻兄弟元素 - + 
+        5、兄弟元素 - ～
+
+        多个选择器用,分割
+    -->
+
+    <div class="red">
+        <ul>
+            <li>1list</li>
+            <li>2list</li>
+            <li class="special">3list</li>
+            <li>4list</li>
+            <li>5list</li>
+            <li>6list</li>
+        </ul>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum, ipsam beatae! Earum recusandae ipsa natus.
+        Obcaecati similique deserunt natus debitis veniam iure, dicta repellendus. Repellat architecto nisi provident?
+        Explicabo, accusamus.
+    </div>
+
+    <!-- 
+        层叠：解决声明冲突的过程，浏览器自动处理（权重计算）
+        声明冲突：同一个样式，多次应用到同一个元素
+        1、比较重要性
+            重要性从高到低
+            ·作者样式表中的!important样式
+            ·作者样式表中的普通样式
+            ·浏览器默认样式表中的样式
+        2、比较特殊性
+            当存在特殊性同级的样式时，根据选择器选中的范围，范围越窄越特殊
+            具体规则：通过选择器，计算出一个4位数（xxxx），256进制
+                ·千位，如果是内联样式记1，否则记0
+                ·百位，等于选择器中所有id选择器的数量
+                ·十位，等于选择器中所有类选择器、属性选择器、伪类选择器的数量之和
+                ·个位，等于选择器中所有元素选择器、伪元素选择器的数量之和
+
+        3、比较源次序
+            代码书写靠后的胜出
+
+
+        重置样式表
+        书写一写作者样式，覆盖浏览器的默认样式
+        常见的重置样式表：normalize.css，reset.css，meyer.css
+     -->
+
+    <div id="mydiv">
+        <ul id="myul">
+            <li id="myli">
+                <a href="https://163.com/" class="mylink">
+                    举例
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- 
+        继承
+        子元素会继承父元素的某些css属性
+        能被继承的属性：
+            1、与文字内容（font、line）相关的属性都能被继承
+            2、其余属性一般不继承
+ 
+    
+    -->
+
+    <div id="inherit">
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni id assumenda tempora repellat officiis harum
+            consectetur, rerum quo. Perspiciatis dicta quidem libero blanditiis veritatis laboriosam consectetur eius
+            vero nobis saepe.</p>
+        <ul>
+            <li>Lorem.</li>
+            <li>Cupiditate?</li>
+            <li>Dignissimos!</li>
+            <li>Delectus.</li>
+            <li>Nemo!</li>
+            <li>Repellat!</li>
+            <li>Aliquam.</li>
+            <li>Debitis.</li>
+            <li>At.</li>
+            <li>Assumenda.</li>
+        </ul>
+        <div>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id sequi quo illo alias ipsam distinctio iusto
+            velit facilis enim? Recusandae dignissimos totam, quos tenetur aliquid rerum veritatis esse aspernatur. Qui!
+        </div>
+    </div>
+
+    <!-- 
+        属性值的计算过程
+        元素一次渲染，顺序按照页面文档的树型目录依次进行
+        渲染每个元素的前提条件：该元素的所有css属性必须有值
+        特殊的css取值：inherit（强制继承父属性的值）、initial（将该属性设置为默认值）在层叠冲突过程中进行计算值  
+
+        元素从所有属性没有值，到所有的属性都有值，这个计算过程，叫做属性值的计算过程
+        计算过程：
+        1、确定声明值（作者样式表、浏览器默认样式表）
+        2、层叠冲突
+        3、使用继承（强制继承）
+            a{
+                /* 强制元素去继承父元素的属性 */
+                color: inherit;
+            }
+        4、使用默认值
+    -->
+
+    <!-- 
+        盒模型 
+        box：每个元素在页面中都会生成一个矩形区域
+        盒子类型：
+        1、行盒：display等于inline的元素
+        2、块盒：display等于block的元素
+
+        行盒在页面中不换行、块盒独占一行
+        display默认值是inline，默认情况下不从父元素继承
+
+        浏览器默认样式表设置的块盒：容器元素、h1~h6、p
+        常见的行盒：span、a、img、video、audio
+
+        无论行盒、块盒，都是有一下几个部分组成，从内到外：
+        1、内容：content
+            width、height，设置的是盒子内容的宽高
+            内容盒：整个盒子的内容部分 content-box
+        2、填充：padding
+            盒子边框到盒子内容的距离
+            padding-left
+            padding-right
+            padding-top
+            padding-bottom
+            简写方式： 
+            上右下左  padding：10px 20px 30px 40px
+            上下 左右 padding：10px 20px
+            全部一致  padding：10px
+
+            填充盒：填充区+内容区 padding-box
+        3、边框：border
+            边框：边框样式 + 边框宽度 + 边框颜色
+            边框样式：border-style
+            边框宽度：border-width
+            边框颜色：border-color
+            默认情况下，边框颜色与字体一致
+            style、width、color三个属性的简写方式与padding一致
+            或者 border:10px dashed red
+
+            边框盒：边框 + 填充区 + 内容区 border-box
+        4、外边距：margin
+            边框到其他盒子的距离
+            margin-top
+            margin-right
+            margin-bottom
+            margin-left
+
+
+    -->
+
+    <h1 style="background-color:#008c8c;
+        padding-left: 20px;
+        padding-top: 5px;
+        padding-right: 15px;
+        padding-bottom: 20px;
+        border-style: solid;
+        border-width: 2px;
+        border-color: rebeccapurple;
+        ">
+        lorem2
+    </h1>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, eius?</p>
+
+    <div>Lorem ipsum dolor sit amet.</div>
+
+    <div>
+        <span>Lorem, ipsum.</span>
+        <span>Aliquid, quisquam.</span>
+        <span>Asperiores, animi.</span>
+        <span>Ratione,aspernatur.</span>
+        <span>Ratione, molestias?</span>
+        <span>Sed, quos.</span>
+        <span>Consectetur,recusandae?</span>
+        <span>Consequatur, unde!</span>
+        <span>Quod, eius?</span>
+        <span>Earum, nesciunt.</span>
+    </div>
+
+    <div class="div1">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat blanditiis et quis, dolor qui
+        distinctio asperiores fugit! Quas voluptas quam cum ea dignissimos quisquam necessitatibus quo quos laboriosam
+        dolores! Saepe!
+    </div>
+
 </body>
 
 </html>

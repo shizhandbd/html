@@ -3,3 +3,72 @@
     font-size: 5em;
     text-align: left;
 }
+
+/* *{通配符选择器
+    color: red;
+} */
+
+[href="https://bilibili.com/"]{
+    color: #00aeec;
+}
+
+[class*="b"]{
+    color:blue
+}
+a:visited{
+    color:chocolate ;
+}
+
+a:hover{
+    background-color: #008e8e;
+    color: #fff;
+}
+a:active{
+    color: black;
+    background-color: #595959;
+}
+
+
+
+a{
+    text-decoration: none; 
+}
+
+span::before{
+    content: "《";
+    color: green;
+}
+
+span::after{
+    content: "》";
+    color: green;
+}
+
+div{
+    background-color: lightblue;
+    border:4px dashed #008e8e ;
+    margin-left: 20px;
+}
+
+.div1{
+    text-indent: 2em;
+    line-height: 2;
+    margin-top: 20px;
+}
+
+
+.red li:hover{
+    color: #fff;
+    background-color: #008e8e;
+}
+
+.speciac{
+    color: red;
+}
+.speciac+li{
+    color:bisque;
+}
+
+.speciac+li~li{
+    text-decoration: underline;
+}

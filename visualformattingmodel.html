@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .parents{
+            background-color: lightblue;
+            border: 2px solid;
+            padding: 30px;
+            margin: 40px auto;
+        }
+        .child{
+            width: 200px;
+            border: 2px solid;
+            height: 100px;
+            background-color: red;
+            margin: 60px ;
+
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        视觉格式化模型
+        visual formatting model
+        大体上将页面中盒子的排列分为三种方式
+        1、常规流
+        2、浮动
+        3、定位
+
+        常规流布局
+        常规流、文档流、普通文档流、常规文档流
+        所有元素，默认情况下都属于常规流布局
+        总体规则：块盒独占一行，行盒水平一次排列
+        包含块：containing block 每个盒子都有它的包含块，包含块决定了盒子的排列区域
+        绝大部分情况下，盒子的包含块为其父元素的内容盒
+        块盒规则
+        1、每个块盒的总宽度，必须刚好等于包含块的宽度
+        宽度的默认值是auto，将剩余空间吸收掉
+        margin的取值也可以是auto，默认值为0
+        当出现多个属性为auto时，width的优先级最高
+        若宽度、边框、内边距、外边距计算后，仍然有剩余空间，剩余空间被margin-right全部吸收
+        常规流下，块盒在包含块中居中，可以定宽，然后将左右margin设置为auto
+
+        2、每个块盒垂直方向上的auto
+        height：auto 适应内容的高度
+        margin：auto 表示0
+
+        3、百分比取值
+        水平方向上的padding、width、margin可以取值为百分比
+        以上的百分比取值相对于包含块的宽度
+        高度的百分比：
+            1）、包含块的高度是否取决于子元素的高度，设置的百分比无效
+            2）、包含块的高度不取决于子元素的高度，百分比相对于父元素的高度
+
+        4、上下外边距的合并
+        两个常规流块盒，上下外边距相邻，会进行合并
+        两个外边距取最大值
+        子元素与父元素的外边距合并可以通过添加border、padding隔开
+    -->
+    
+    <div class="parents">
+        <div class="child"></div>
+        <div class="child"></div>
+    </div>
+</body>
+</html>

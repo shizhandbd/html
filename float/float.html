@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            padding: 20px 20px;
+        }
+        #test{
+            border: 3px solid ;
+            float: right;
+        }
+        .container{
+            background-color: aqua;
+            width: 800px;
+            height: 1000px;
+        }
+
+        .container div .tiem{
+            background-color: #000;
+            color: #fff;
+            float: right;
+        }
+        .normal{
+            width: 150px;
+            height: 150px;
+            background-color: #000;
+            color: #fff;
+        }
+
+        /* .container .left{
+            float: left;
+            
+        }
+
+        .container .right{
+            float: right;
+        } */
+
+
+    </style>
+</head>
+<body>
+    <!-- 
+        浮动 float
+        1、文字环绕
+        2、横向排列
+
+        浮动的基本特点
+        修改float属性值
+        ·left 元素靠上靠左排列
+        ·right 元素靠上靠右排列
+        默认值为none
+
+        1、当一个元素浮动后，元素必定为块盒(更改display属性为block)
+        2、浮动元素的包含块和常规流一样，为父元素的内容盒
+
+        盒子尺寸
+        1、宽度为auto时，适应内容宽度
+        2、高度为auto时，与常规流一致，适应内容高度
+        3、margin为auto时，为0
+        4、padding、border、百分比设置与常规流一致
+
+        盒子排列
+        1、左浮动的盒子，靠上靠左排列
+        2、右浮动的盒子，靠上靠右排列
+        3、浮动盒子在包含块中排列时，会避开常规流盒子;常规流盒子无视浮动盒子
+        4、行盒在排列时会避开浮动盒子,如果文字没有在行盒中，浏览器会生成一个行盒包裹文字，匿名行盒，无法被看见
+        5、外边距合并不会发生
+    -->
+
+    <span id="test">Lorem ipsum dolor sit amet.</span>
+
+    <div class="container">
+        <!-- <div class="right">Lorem ipsum dolor sit amet.</div>
+        <div class="left">Lorem, ipsum dolor.</div> -->
+
+        <div class="item">Lorem.</div>
+        <div class="item">Aspernatur, voluptatem!</div>
+        <div class="item">Vel, iusto numquam?</div>
+        <div class="item">Optio molestias aliquid tenetur.</div>
+        <div class="item">Accusantium laboriosam eum nam quasi!</div>
+        <div class="item">Tempora alias velit consectetur illum cum.</div>
+        <div class="item">Nihil voluptas tenetur, ipsa optio laborum hic.</div>
+        <div class="item">Iste nostrum blanditiis, adipisci recusandae aspernatur voluptatibus vero.</div>
+        <div class="item">Deleniti earum repudiandae labore aperiam soluta facilis ipsa molestiae!</div>
+        <div class="item">Aliquam alias officia nam nobis voluptatibus nulla fuga asperiores esse?</div>
+        <div class="normal"></div>
+    </div>
+
+    <div>
+        <img src="../image/扯不开.gif" alt="" style="float: left; margin-right: 6px;margin-bottom: 6px;">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Animi fuga placeat odit perferendis, accusantium nesciunt? Earum adipisci sapiente, sed sint quos voluptatum animi rem aliquam quasi, beatae odit harum dicta?</p>
+    </div>
+
+
+
+</body>
+</html>

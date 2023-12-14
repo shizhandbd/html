@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p,
+        span {
+            background-color: lightblue;
+            border: 2px solid;
+            line-height: 3;
+        }
+
+        .a-link {
+            background-color: red;
+            color: white;
+            display: inline-block;
+            width: 100px;
+            text-align: center;
+            height: 40px;
+            line-height: 40px;
+        }
+
+        .pager a{
+            border: 2px #e1e2e3 solid;
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            line-height: 20px;
+            margin: 0px 4px;
+            text-decoration: none;
+        }
+
+        .pager a:hover{
+            border-color: blue;
+            background-color: #c4c4c4;
+        }
+
+        .pager a.selected{
+            border: none;
+            color: #000;
+            background: initial;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        行盒的盒模型
+        常见的行盒：包含具体内容的元素 span、strong、em、i、img、video、audio
+        1、行盒沿着内容延伸
+        2、行盒设置的宽高无效，通过调整字体的大小、行高、字体类型，间接调整行盒宽高
+        3、padding水平方向上有效，垂直方向仅影响背景，不会占据具体空间
+        4、border水平方向上有效，垂直方向仅影响背景，不会占据具体空间
+        5、margin水平方向上有效，垂直方向仅影响背景，不会占据具体空间
+        
+        行块盒
+        display：inline-block
+        1、不独占一行
+        2、盒模型中所有尺寸都有效
+
+        空白折叠
+        空白折叠发生在 行盒内部 或 行盒之间
+
+        可替换元素和非可替换元素
+        大部分元素，页面上显示的结果，取决于元素内容，非可替换元素
+        少部分元素，页面上显示的结果，取决于元素属性，可替换元素
+        可替换元素：img、video、audio，绝大部分可替换元素均为行盒
+        可替换元素类似于行块盒，盒模型中所有尺寸都有效
+        设置object-fit可以改变可替换元素类中内容的适应方式
+    -->
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo optio, velit assumenda expedita, dignissimos fuga
+        aperiam vel ratione et tempora nesciunt sed ipsum quos voluptatem, possimus quae harum commodi eligendi.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque labore quidem incidunt tempore autem temporibus
+        corporis quo iusto debitis alias. Quibusdam repellat fugiat delectus voluptas aut, ea cupiditate nisi at.</p>
+    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro veniam odit incidunt? Aut accusamus itaque
+        maiores explicabo aliquam non commodi distinctio, dolor ratione! Velit labore dignissimos repudiandae est nemo
+        eos.</span><span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa, eaque itaque labore ipsum quis quo iste
+        ratione, aspernatur soluta amet sequi voluptatem? Et laudantium dignissimos minima blanditiis delectus amet
+        quasi.</span>
+
+
+    <a class="a-link" href="https://www.baidu.com">baidu</a>
+
+    <div class="pager">
+        <a class="selected" href="">1</a><a href="">2</a><a href="">3</a><a href="">4</a><a href="">5</a><a href="">6</a><a
+            href="">7</a><a href="">8</a><a href="">9</a><a href="">10</a>
+    </div>
+</body>
+
+</html>

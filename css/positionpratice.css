@@ -1,0 +1,207 @@
+.header {
+    /* 导航栏样式 */
+    background-color: #e3e4e5;
+    color: #999;
+    height: 40px;
+    line-height: 40px;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+.header .topnav {
+    /* 导航栏样式 */
+    position: relative;
+}
+
+
+.header .topnav>li {
+    /* 导航栏一级菜单 */
+    float: left;
+    margin: 0 15px;
+    box-sizing: border-box;
+    text-align: center;
+    width: 150px;
+    position: relative;
+}
+
+.header .topnav>li:hover {
+    /* 导航栏一级菜单 */
+    background-color: #fff;
+    border: 1px solid #1c1c1c;
+    border-bottom: none;
+    line-height: 38px;
+}
+
+.header .topnav>li .submenu {
+    /* 导航栏二级菜单 */
+    line-height: 1.5;
+    text-align: left;
+    width: 300px;
+    border: 1px solid #1c1c1c;
+    display: none;
+    box-sizing: border-box;
+    position: absolute;
+    right: -1px;
+    background-color: #fff;
+}
+
+.header .topnav>li:hover .submenu {
+    /* 导航栏二级菜单 */
+    display: block;
+}
+
+.header .topnav>li:hover::after {
+    /* 导航栏二级菜单 */
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    background-color: #fff;
+    left: 0;
+    bottom: -1px;
+}
+
+.header .topnav .loginButton {
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    color: red;
+    position: absolute;
+    margin: 0 30px;
+    right: 0;
+}
+
+.modal {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #1c1c1c7a;
+
+}
+
+.modal .login {
+    position: absolute;
+    width: 400px;
+    height: 500px;
+    background-color: #fff;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    box-sizing: border-box;
+    padding: 1em;
+    border-radius: 16px;
+}
+
+.modal .login .closeButton {
+    text-align: center;
+    line-height: 20px;
+    width: 20px;
+    height: 20px;
+    color: #000;
+    border: 1px solid #000;
+    border-radius: 10px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+}
+
+.bannar {
+    width: 520px;
+    height: 304px;
+    margin: 60px auto;
+    margin-bottom: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.bannar .imgs {
+    width: 1560px;
+    height: 304px;
+}
+
+.bannar .imgs img {
+    width: 520px;
+    height: 304px;
+
+}
+
+.bannar .imgs a {
+    float: left;
+}
+
+.bannar .left,
+.bannar .right {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    color: #fff;
+    top: 0;
+    bottom: 0px;
+    margin: auto;
+    font-size: 3em;
+    font-family: Arial;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+}
+
+.bannar .left:hover,
+.bannar .right:hover {
+    color: #f40;
+    background-color: #ffffff80;
+    border-radius: 50%;
+}
+
+.bannar .left {
+    left: 20px;
+}
+
+.bannar .right {
+    right: 20px;
+
+}
+
+.bannar .bannar-modal {
+    position: absolute;
+    width: 100%;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.3);
+    left: 0;
+    bottom: 0;
+    color: #fff;
+    line-height: 40px;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.bannar .bannar-modal .bannar-title {
+    float: left;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.bannar .bannar-modal .bannar-dots {
+    float: right;
+}
+
+.bannar .bannar-modal .bannar-dots .dot {
+    width: 8px;
+    height: 8px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 8px;
+    cursor: pointer;
+}
+
+.bannar .bannar-modal .bannar-dots .dot:hover{
+    background-color: rgba(51, 102, 153, 0.5);
+
+}
